@@ -1,0 +1,30 @@
+<app-header-nav></app-header-nav>
+<div class="student-container">
+  <h2>Student Details</h2>
+
+  <!-- Add Button - Positioned to the right -->
+  <div class="add-button-container">
+    <button class="add-btn" [routerLink]="['/add-student']">Add Student</button>
+  </div>
+
+  <div class="student-row">
+    <div *ngFor="let mark of marks; let i = index" class="student-card">
+      <div class="student-info">
+        <div class="student-name">Name: {{ mark.name }}</div>
+        <div class="student-rollno">Roll No: {{ mark.rollno }}</div>
+
+        <div class="subjects">
+          <div *ngFor="let subject of mark.subjects">Subject: {{ subject }}</div>
+        </div>
+
+        <div class="student-cgpa">CGPA: {{ mark.cgpa }}</div>
+        <div class="student-percentage">Percentage: {{ mark.percentage }}%</div>
+      </div>
+
+      <div class="actions">
+        <button class="edit-btn" [routerLink]="['/edit-student', mark.id]">Edit</button>
+        <button class="delete-btn" (click)="deleteStudent(mark.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

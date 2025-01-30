@@ -1,0 +1,35 @@
+<app-header-nav></app-header-nav>
+<form #form="ngForm" (ngSubmit)="saveStudent()">
+  <!-- Name -->
+  <label for="name">Name:</label>
+  <input id="name" name="name" type="text" [(ngModel)]="newMarks.name" required />
+
+  <!-- Roll No -->
+  <label for="rollNo">Roll No:</label>
+  <input id="rollNo" name="rollNo" type="text" [(ngModel)]="newMarks.rollno" required />
+
+  <!-- Subjects (dynamic input fields) -->
+  <div *ngFor="let subject of newMarks.subjects; let i = index; trackBy: trackByIndex">
+    <label for="subject{{ i }}">Subject {{ i + 1 }}:</label>
+    <input
+      [id]="'subject' + i"
+      [name]="'subject' + i"
+      type="text"
+      [(ngModel)]="newMarks.subjects[i]"
+      (ngModelChange)="onSubjectChange(i)"
+      required
+    />
+  </div>
+  <button type="button" (click)="addSubject()">Add Subject</button>
+
+  <!-- CGPA -->
+  <label for="cgpa">CGPA:</label>
+  <input id="cgpa" name="cgpa" type="number" [(ngModel)]="newMarks.cgpa" step="0.1" min="0" max="10" required />
+
+  <!-- Percentage -->
+  <label for="percentage">Percentage:</label>
+  <input id="percentage" name="percentage" type="number" [(ngModel)]="newMarks.percentage" step="0.1" min="0" max="100" required />
+
+  <!-- Save Button -->
+  <button type="submit" [disabled]="form.invalid">Save</button>
+</form>

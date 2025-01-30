@@ -1,0 +1,40 @@
+<app-login-navbar-staff></app-login-navbar-staff>
+<app-description></app-description>
+<div class="login-container">
+  <h2>Staff Login</h2>
+  <form (ngSubmit)="login()">
+    <!-- Staff ID -->
+    <label for="staffId">👨‍🏫 Staff ID</label>
+    <input
+      id="staffId"
+      type="text"
+      [(ngModel)]="loginDetails.staffid"
+      name="staffId"
+      [ngModelOptions]="{standalone:true}"
+      required
+    />
+
+    <!-- Password -->
+    <label for="password">🔑 Password</label>
+    <div class="password-field">
+      <input
+        id="password"
+        [type]="passwordVisible ? 'text' : 'password'"
+        [(ngModel)]="loginDetails.password"
+        name="password"
+        [ngModelOptions]="{standalone:true}"
+        required
+      />
+      <img
+        [src]="passwordVisible ? '../../../assets/spassword.png' : '../../../assets/hpassword.png'"
+        class="toggle-icon"
+        (click)="togglePasswordVisibility()"
+        alt="Toggle visibility"
+      />
+    </div>
+
+    <!-- Login Button -->
+    <button type="submit">Login</button>
+  </form>
+  <a (click)="navigateToStudentLogin()">Student Login?</a>
+</div>

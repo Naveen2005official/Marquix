@@ -1,0 +1,92 @@
+.student-container {
+  margin: 20px auto;
+  max-width: 1000px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.student-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.student-card {
+  background-color: #f9f9f9;
+  padding: 15px;
+  margin-bottom: 30px; /* Increased margin-bottom between student cards and the button */
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: calc(33.333% - 20px); /* Adjusting width to fit 3 cards per row */
+  box-sizing: border-box;
+}
+
+.student-info {
+  margin-bottom: 15px;
+}
+
+.student-name, .student-rollno, .student-cgpa, .student-percentage {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.subjects {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.actions {
+  text-align: right;
+}
+
+button {
+  padding: 5px 10px;
+  margin: 2px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-btn:hover {
+  background-color: #45a049;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d32f2f;
+}
+
+/* Add button styling */
+.add-button-container {
+  text-align: center;
+}
+
+.add-btn {
+  background-color: #008CBA;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.add-btn:hover {
+  background-color: #007B9A;
+}
